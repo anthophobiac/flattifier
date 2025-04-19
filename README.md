@@ -1,39 +1,32 @@
-![Cobra CLI Icon](Cobra-Template.png)
+# Flattifier
 
-# Cobra Template
-
-A minimal template for building command-line tools in Go using:
+A minimal CLI tool for converting JSON to CSV written in Go using:
 
 - [Cobra](https://github.com/spf13/cobra) – for CLI structure
-- [Viper](https://github.com/spf13/viper) – for configuration
 - [fatih/color](https://github.com/fatih/color) – for colourful terminal output
 
 ---
 
-### Getting Started
+### How to use
 
-#### 1. Clone the template
+#### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/cobra-template.git
-cd cobra-template
-go mod tidy
+git clone https://github.com/anthophobiac/flattifier.git
+cd flattifier
+go install
 ```
 
-#### 2. Run the CLI
+#### 2. Run the convert command
 ```bash
-go run main.go
-go run main.go hello # An example command
+flattifier convert -i input.json -o output.csv
 ```
 
 ### Project Structure
 ```
-cobra-template/
-├── cmd/              # Cobra commands
-├── config/           # Viper config setup
-├── pkg/logger/       # Logger that uses fatih/color
-├── main.go           # Application entrypoint
+flattifier/
+├── cmd/                 # Cobra commands
+├── internal/converter   # Contains converting logic
+├── pkg/logger/          # Logger that uses fatih/color
+├── main.go              # Application entrypoint
 ```
-### How to use
-* New commands can be added to `cmd/`
-* Config logic can be updated in `config/config.go`
