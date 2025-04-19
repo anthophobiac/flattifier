@@ -1,6 +1,6 @@
 package main
 
-import "cobra-template/cmd"
+import "flattifier/cmd"
 
 func main() {
 	cmd.Execute()

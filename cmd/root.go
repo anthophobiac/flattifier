@@ -4,16 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"cobra-template/config"
 	"github.com/spf13/cobra"
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "cobra-template",
-	Short: "A starter template for Go CLI tools using Cobra",
-	PersistentPreRun: func(cmd *cobra.Command, args []string) {
-		config.InitConfig()
-	},
+	Use:   "flattifier",
+	Short: "Tiny CLI app for converting JSON to CSV",
 }
 
 func Execute() {
@@ -21,8 +17,4 @@ func Execute() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-}
-
-func init() {
-	rootCmd.PersistentFlags().String("config", "", "config file (default is .env)")
 }
